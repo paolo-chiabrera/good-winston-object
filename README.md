@@ -10,9 +10,46 @@ $ npm install --save good-winston-object
 ## Usage
 
 ```js
-var goodWinstonObject = require('good-winston-object');
+const winston = require('winston');
+const logger = new winston.Logger({
+  level: 'info',
+  transports: [
+    new (winston.transports.Console)({
+      colorize: true
+    }),
+    new (winston.transports.File)({
+      filename: './mylogfile.log',
+      logstash: true
+    })
+  ]
+});
 
-goodWinstonObject('Rainbow');
+const reporters = {
+  winston: [{
+    module: 'good-squeeze',
+    name: 'Squeeze',
+    args: [{ log: '*', response: '*' }]
+  }, {
+    module: 'good-winston-object',
+    args: [logger]
+  }]
+};
+
+server.register({
+  register: require('good'),
+  options: {
+    reporters
+  },
+}, (err) => {
+
+  if (err) {
+    return server.log(['error'], err);
+  }
+
+  server.start(() => {
+    server.log(['info', 'start'], `Server started at ${ server.info.uri }`);
+  });
+});
 ```
 ## License
 
