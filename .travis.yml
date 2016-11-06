@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- v7
+- v6
+- v5
+- v4
+deploy:
+  provider: npm
+  email: paolo.chiabrera@gmail.com
+  api_key:
+    secure: lcIgIya/POo3VRf5xvWWAC9imi1KEZCMjLJjPqfoocJ5ZAgh/huoZ7ziIcGtvXZFP+t360BqWXqHU/hM9Hzzh8p7omQjGuxmuEcEdt2/BRxoecvNLm0KzVc13EZmPIzPRhvoWuaYVhk+AvoJG44sZZXIxEHcUB2STfuPnNgKg+60F/oeTy6uL4rt/Z0rsQPg+xC3+4I9ayElrdEQy8QAjcB737Qqc1eF1IEIKijyPup9YFfCKhIo3gOfsG18EgnZNEZxYpD7M+j3foQ9lmt3fYMGfI2ke/bwA04jlLcvjt84ce6WFW+HQtvZ2GBBTc5ylaMNOrqu5y5zZZnhSW/Yyaqxp8a7TybFLVgERaT7ytkJ+mekQrr1nxz5ya9FoWGO0EWqL5VlLiPeJpBfU0v8J8Un/k4gK8XcbfwmYb6dxYLFPwKs5rCrOAK0bqCBo7jgsJQs7iSdA3IOjiYqlqziUcb21KSYaEv+7eL5VZu1ZYsTQT/CeQOMCWh0pu8ZrxBrc843VjuilFL/GNIQ5OkDs4tKH1nztmail2LqqsNuEvaRv17/mjIrfjEkkIVHTFNGo6kUT51UAqihGLBXbxXLv/wSPKs0GQaKe2Zg8Vfvk0kUn6XNdWWH8QWqQfFAt2POZl4oIrCn+54cCMyY9a3FLFag5RnU9f2q8KQcdYyt7H0=
+  on:
+    node: v6
+    tags: true
+    repo: paolo-chiabrera/good-winston-object
